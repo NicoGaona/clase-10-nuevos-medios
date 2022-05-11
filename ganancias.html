@@ -10,7 +10,7 @@
         <style>
             :root {
                 --bs-body-color: #fff;
-                --bs-body-bg: #8B0000;
+                --bs-body-bg: #8b0000;
             }
         </style>
         <title>Remake &#127909;</title>
@@ -39,31 +39,37 @@
             var myChart = new Chart(ctx, {
                 type: "bar",
                 data: {
-                  labels: ['La Era del Hielo 1', 'La Era del Hielo 2', 'La Era del Hielo 3', 'La Era del Hielo 4', 'La Era del Hielo 5', 'La Era del Hielo 6'],
-                  datasets: [{
-                      label: 'Ganancias en millones de dólares',
-                      data: [383, 655, 886, 877, 408, 380],
-                      backgroundColor: 'rgba(220, 220, 220, 0.5)',
-                      borderWidth: 0
+                    labels: ["La Era del Hielo 1", "La Era del Hielo 2", "La Era del Hielo 3", "La Era del Hielo 4", "La Era del Hielo 5", "La Era del Hielo 6"],
+                    datasets: [
+                        {
+                            label: "Ganancias en millones de dólares",
+                            data: [383, 655, 886, 877, 408, 380],
+                            backgroundColor: "rgba(220, 220, 220, 0.5)",
+                            borderWidth: 0,
                         },
                     ],
                 },
                 options: {
-                  indexAxis: "y",
+                    indexAxis: "y",
                     scales: {
-                      x:{
-                        min:0,
-                        ticks: {
-                          callback: function (numero) {
-                            return "US$" + numero.
-                            toLocaleString("es-CL");
-                          },
+                        x: {
+                            min: 0,
+                            ticks: {
+                                color: "white",
+                                callback: function (numero) {
+                                    return "US$" + numero.toLocaleString("es-CL");
+                                },
+                            },
                         },
-                      },
                         y: {
-                            beginAtZero: true,
+                            ticks: { color: "white" },
                         },
                     },
+                    plugins:{
+                        legend:{
+                            display:false,
+                        }
+                    }
                 },
             });
         </script>
